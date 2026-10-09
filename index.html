@@ -85,7 +85,7 @@
         .image-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* السحر هنا: بيخلي الصورة تعبي الإطار العرضي وتتقص من فوق وتحت */
+            object-fit: cover; /* بيخلي الصورة تعبي الإطار العرضي وتتقص من فوق وتحت */
             border-radius: 15px;
             display: block;
             transition: transform 0.3s ease;
@@ -180,10 +180,10 @@
         <h1 class="romantic-title fade-in-up">My Love</h1>
         <p class="sub-title fade-in-up delay-1">إلى أجمل حكاية في حياتي.. ❤️</p>
         
-        <!-- الصورة مع التأثير ثلاثي الأبعاد -->
+        <!-- الصورة مع التأثير ثلاثي الأبعاد (تم وضع الرابط الجديد) -->
         <div class="image-wrapper fade-in-up delay-2" id="tiltImage">
-            <!-- ضع رابط الصورة الخاص بك هنا -->
-            <img src="https://i.postimg.cc/gx43pL8B/IMG-20260909-234836-426.jpg" alt="لحظتنا الجميلة">
+            <!-- ضع رابط الصورة الجديد هنا -->
+            <img src="https://i.postimg.cc/Q9b1SBmf/IMG-20260909-234836-426.jpg" alt="لحظتنا الجميلة">
         </div>
 
         <!-- رسالة رومانسية بتتكتب لوحدها -->
@@ -243,7 +243,7 @@
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const rotateX = ((y - centerY) / centerY) * -10; // قللت الزاوية شوية عشان العرضي
+            const rotateX = ((y - centerY) / centerY) * -10; 
             const rotateY = ((x - centerX) / centerX) * 10;
             
             tiltImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
@@ -260,4 +260,4 @@
     </script>
 
 </body>
-    </html>
+</html>
