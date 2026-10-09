@@ -25,7 +25,7 @@
             overflow-x: hidden;
             position: relative;
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
         }
 
         /* إضاءات نيون متحركة (Aurora Effect) */
@@ -37,23 +37,23 @@
             z-index: 0;
             animation: floatOrb 20s infinite alternate ease-in-out;
         }
-        .orb-1 { width: 400px; height: 400px; background: #ff4d6d; top: -100px; left: -100px; }
-        .orb-2 { width: 350px; height: 350px; background: #7b2cbf; bottom: -100px; right: -100px; animation-delay: -5s; }
-        .orb-3 { width: 300px; height: 300px; background: #ff9a9e; top: 40%; left: 60%; animation-delay: -10s; }
+        .orb-1 { width: 350px; height: 350px; background: #ff4d6d; top: -100px; left: -100px; }
+        .orb-2 { width: 300px; height: 300px; background: #7b2cbf; bottom: -100px; right: -100px; animation-delay: -5s; }
+        .orb-3 { width: 250px; height: 250px; background: #ff9a9e; top: 40%; left: 60%; animation-delay: -10s; }
 
         @keyframes floatOrb {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(80px, 80px) scale(1.3); }
+            100% { transform: translate(60px, 60px) scale(1.2); }
         }
 
         /* قلوب عائمة في الخلفية */
         .bg-heart {
             position: fixed;
-            color: rgba(255, 77, 109, 0.15);
-            font-size: 100px;
+            color: rgba(255, 77, 109, 0.1);
+            font-size: 120px;
             z-index: 1;
             pointer-events: none;
-            animation: floatBgHeart 15s infinite linear;
+            animation: floatBgHeart 18s infinite linear;
         }
         @keyframes floatBgHeart {
             0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
@@ -83,11 +83,11 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border-radius: 35px;
-            padding: 40px 25px;
+            padding: 45px 25px;
             width: 92%;
             max-width: 650px;
             /* إطار متوهج بألوان رومانسية */
-            box-shadow: 0 0 50px rgba(255, 77, 109, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 50px rgba(255, 77, 109, 0.15), inset 0 0 30px rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             z-index: 10;
@@ -97,13 +97,13 @@
 
         @keyframes floatCard {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-10px); }
         }
 
         /* عنوان رومانسي متوهج */
         .romantic-title {
             font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
+            font-size: 4rem;
             background: linear-gradient(45deg, #ff9a9e, #fecfef, #ff6a88);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -113,289 +113,6 @@
         }
 
         .sub-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #e0c3d2;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            font-weight: 300;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-
-        /* حاوية الصورة - بالعرض مع إطار متوهج */
-        .image-wrapper {
-            position: relative;
-            display: block;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            margin-bottom: 10px;
-            border-radius: 20px;
-            padding: 6px;
-            background: linear-gradient(45deg, #ff6a88, #ff9a9e, #fecfef);
-            box-shadow: 0 0 40px rgba(255, 106, 136, 0.5);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            overflow: hidden;
-        }
-
-        .image-wrapper:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 70px rgba(255, 106, 136, 0.9);
-        }
-
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-            display: block;
-        }
-
-        /* جملة تحت الصورة */
-        .image-caption {
-            font-size: 1rem;
-            color: #ffb3c6;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        /* الرسالة الرومانسية */
-        .message-box {
-            margin-bottom: 30px;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #f8e1e7;
-            min-height: 90px;
-            padding: 0 15px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-        }
-
-        /* حاوية الفيديو */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 106, 136, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            background: #000;
-            margin-bottom: 30px;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
-        }
-
-        /* زر الحب الفخم */
-        .love-btn {
-            background: linear-gradient(45deg, #ff6a88, #ff4d6d);
-            color: white;
-            border: none;
-            padding: 16px 45px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-family: 'Cairo', sans-serif;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(255, 106, 136, 0.5);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .love-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(255, 106, 136, 0.8);
-        }
-
-        .love-btn:active {
-            transform: translateY(1px) scale(0.98);
-        }
-
-        /* لمعة الزر */
-        .love-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        .love-btn:hover::before {
-            left: 100%;
-        }
-
-        /* عداد الضغطات */
-        .click-counter {
-            margin-top: 15px;
-            font-size: 0.95rem;
-            color: #ffb3c6;
-            font-weight: bold;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .click-counter.show {
-            opacity: 1;
-        }
-
-        /* العناصر المتساقطة (قلوب، فراشات، ورد، نجوم) */
-        .falling-element {
-            position: fixed;
-            top: -50px;
-            z-index: 100;
-            pointer-events: none;
-            animation: fall linear forwards;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 1; }
-            100% { transform: translateY(110vh) rotate(720deg) scale(1.5); opacity: 0; }
-        }
-
-        /* أنيميشن ظهور العناصر */
-        .fade-in-up {
-            opacity: 0; transform: translateY(30px);
-            animation: fadeInUp 1.2s ease-out forwards;
-        }
-        .delay-1 { animation-delay: 0.3s; }
-        .delay-2 { animation-delay: 0.6s; }
-        .delay-3 { animation-delay: 0.9s; }
-        .delay-4 { animation-delay: 1.2s; }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- إضاءات الخلفية -->
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
-    <!-- قلوب عائمة في الخلفية -->
-    <div class="bg-heart" style="left: 5%; animation-delay: 0s;">❤️</div>
-    <div class="bg-heart" style="left: 80%; animation-delay: 5s;">💖</div>
-    <div class="bg-heart" style="left: 45%; animation-delay: 10s;">💘</div>
-
-    <!-- خلفية النجوم -->
-    <div class="stars" id="stars"></div>
-
-    <!-- حاوية المحتوى الرئيسية -->
-    <div class="glass-container">
-        
-        <!-- العنوان -->
-        <h1 class="romantic-title fade-in-up">My Love</h1>
-        <p class="sub-title fade-in-up delay-1">إلى أجمل حكاية في حياتي.. ❤️</p>
-        
-        <!-- الصورة (بالعرض) -->
-        <div class="image-wrapper fade-in-up delay-2">
-            <!-- ضع رابط الصورة الخاص بك هنا -->
-            <img src="https://i.postimg.cc/Q9b1SBmf/IMG-20260909-234836-426.jpg" alt="لحظتنا الجميلة">
-        </div>
-        <p class="image-caption fade-in-up delay-2">أجمل لحظة في يومي هي اللي بتكون معاكِ 💕</p>
-
-        <!-- رسالة رومانسية بتتكتب لوحدها -->
-        <div class="message-box fade-in-up delay-2">
-            <p id="typing-text"></p>
-        </div>
-
-        <!-- الفيديو -->
-        <div class="video-wrapper fade-in-up delay-3">
-            <iframe src="https://www.youtube.com/embed/jacxQUFbZZ4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <!-- زر الحب -->
-        <button class="love-btn fade-in-up delay-4" id="loveBtn" onclick="triggerShower()">اضغطي ياحبيبتي ❤️</button>
-        
-        <!-- عداد الضغطات -->
-        <p class="click-counter" id="counter">ضغطتي <span id="count">0</span> مرة.. وكل مرة بتزيد حبي ليكي! 🥰</p>
-
-    </div>
-
-    <!-- سكريبتات الحركة -->
-    <script>
-        // 1. توليد النجوم في الخلفية
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 120; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-            const size = Math.random() * 3 + 1 + 'px';
-            star.style.width = size;
-            star.style.height = size;
-            star.style.animationDuration = Math.random() * 3 + 2 + 's';
-            star.style.animationDelay = Math.random() * 5 + 's';
-            starsContainer.appendChild(star);
-        }
-
-        // 2. تأثير الكتابة للرسالة الرومانسية
-        const text = "كل يوم بحبك أكتر، وكل لحظة معاك هي أجمل لحظة في حياتي. يا رب يديمك نعمة في حياتي ❤️";
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typing-text").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100); 
-            }
-        }
-        setTimeout(typeWriter, 1500);
-
-        // 3. نظام المفاجآت المتغيرة (قلوب، فراشات، ورد، نجوم) + عداد الضغطات
-        const emojis = ['❤️', '🦋', '🌹', '⭐'];
-        let emojiIndex = 0;
-        let clickCount = 0;
-        const countElement = document.getElementById('count');
-        const counterElement = document.getElementById('counter');
-        const btn = document.getElementById('loveBtn');
-
-        function triggerShower() {
-            // زيادة العداد
-            clickCount++;
-            countElement.innerText = clickCount;
-            counterElement.classList.add('show');
-
-            // تغيير كلام الزر بشكل لطيف
-            if (clickCount === 1) btn.innerHTML = "تاني يا قلبي 🥰";
-            else if (clickCount === 2) btn.innerHTML = "كمان مرة يا عمري 💖";
-            else if (clickCount >= 3) btn.innerHTML = "بحبك أوي يا حبيبتي 😍";
-
-            // اختيار الرمز الحالي
-            const currentEmoji = emojis[emojiIndex];
-            
-            // تغيير الرمز للمرة القادمة
-            emojiIndex = (emojiIndex + 1) % emojis.length;
-
-            // عمل المطر
-            for (let i = 0; i < 35; i++) {
-                setTimeout(() => {
-                    const element = document.createElement('div');
-                    element.classList.add('falling-element');
-                    element.innerHTML = currentEmoji;
-                    element.style.left = Math.random() * 100 + 'vw';
-                    element.style.animationDuration = Math.random() * 2 + 2 + 's';
-                    element.style.fontSize = Math.random() * 30 + 15 + 'px';
-                    
-                    // تخصيص الألوان
-                    if(currentEmoji === '⭐') element.style.color = '#FFD700';
-                    else if (currentEmoji === '❤️') element.style.color = '#ff4d6d';
-                    else if (currentEmoji === '🌹') element.style.color = '#ff2a2a';
-
-                    document.body.appendChild(element);
-
-                    setTimeout(() => {
-                        element.remove();
-                    }, 4000);
-                }, i * 80);
-            }
-        }
-    </script>
-
-</body>
-    </html>
+            margin-bottom: 35
