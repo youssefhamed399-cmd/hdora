@@ -16,7 +16,8 @@
 
         body {
             min-height: 100vh;
-            background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+            /* خلفية رومانسية جديدة: تدرج ليلي مع إضاءة نيون */
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
             font-family: 'Cairo', sans-serif;
             display: flex;
             justify-content: center;
@@ -25,6 +26,24 @@
             position: relative;
             color: #fff;
             padding: 20px 0;
+        }
+
+        /* إضاءات نيون متحركة في الخلفية (سر الجمال) */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            z-index: 0;
+            animation: floatOrb 15s infinite alternate ease-in-out;
+        }
+        .orb-1 { width: 300px; height: 300px; background: #ff4d6d; top: -50px; left: -50px; }
+        .orb-2 { width: 250px; height: 250px; background: #4d4dff; bottom: -50px; right: -50px; animation-delay: -5s; }
+        .orb-3 { width: 200px; height: 200px; background: #ffb3c6; top: 40%; left: 60%; animation-delay: -10s; }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.2); }
         }
 
         /* النجوم في الخلفية */
@@ -53,7 +72,7 @@
 
         /* حاوية المحتوى بتصميم الزجاج الشفاف الفخم */
         .glass-container {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 35px;
@@ -116,7 +135,7 @@
         .image-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* تملأ الإطار العرضي وتتقص من فوق وتحت */
+            object-fit: cover;
             border-radius: 15px;
             display: block;
         }
@@ -135,7 +154,7 @@
         /* حاوية الفيديو */
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             border-radius: 20px;
             overflow: hidden;
@@ -180,16 +199,14 @@
             transform: translateY(1px) scale(0.98);
         }
 
-        /* القلوب المتساقطة */
-        .falling-heart {
+        /* العناصر المتساقطة (قلوب، فراشات، ورد، نجوم) */
+        .falling-element {
             position: fixed;
             top: -50px;
-            color: #ff4d6d;
-            font-size: 24px;
             z-index: 100;
             pointer-events: none;
             animation: fall linear forwards;
-            filter: drop-shadow(0 0 10px rgba(255, 77, 109, 0.8));
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
         }
 
         @keyframes fall {
@@ -216,6 +233,11 @@
 </head>
 <body>
 
+    <!-- إضاءات الخلفية الجديدة -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
     <!-- خلفية النجوم -->
     <div class="stars" id="stars"></div>
 
@@ -241,8 +263,8 @@
             <iframe src="https://www.youtube.com/embed/jacxQUFbZZ4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <!-- زر الحب -->
-        <button class="love-btn fade-in-up delay-4" onclick="createLoveShower()">اضغط هنا يا حبيبي ❤️</button>
+        <!-- زر الحب الجديد -->
+        <button class="love-btn fade-in-up delay-4" onclick="triggerShower()">اضغطي ياحبيبتي ❤️</button>
 
     </div>
 
@@ -275,23 +297,43 @@
         }
         setTimeout(typeWriter, 1500);
 
-        // 3. مطر القلوب عند الضغط على الزر
-        function createLoveShower() {
+        // 3. نظام المفاجآت المتغيرة (قلوب، فراشات، ورد، نجوم)
+        const emojis = ['❤️', '🦋', '🌹', '⭐'];
+        let emojiIndex = 0; // عداد عشان نغير النوع في كل ضغطة
+
+        function triggerShower() {
+            // اختيار الرمز الحالي
+            const currentEmoji = emojis[emojiIndex];
+            
+            // تغيير الرمز للمرة القادمة (بشكل دوري)
+            emojiIndex = (emojiIndex + 1) % emojis.length;
+
+            // عمل المطر
             for (let i = 0; i < 30; i++) {
                 setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.classList.add('falling-heart');
-                    heart.innerHTML = '❤️';
-                    heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.animationDuration = Math.random() * 2 + 2 + 's'; // بين 2 و 4 ثواني
-                    heart.style.fontSize = Math.random() * 20 + 15 + 'px';
-                    document.body.appendChild(heart);
+                    const element = document.createElement('div');
+                    element.classList.add('falling-element');
+                    element.innerHTML = currentEmoji; // وضع الرمز المختار
+                    element.style.left = Math.random() * 100 + 'vw';
+                    element.style.animationDuration = Math.random() * 2 + 2 + 's'; // بين 2 و 4 ثواني
+                    element.style.fontSize = Math.random() * 25 + 15 + 'px';
+                    
+                    // تخصيص الألوان للنجوم والقلوب عشان تبان أحلى
+                    if(currentEmoji === '⭐') {
+                        element.style.color = '#FFD700'; // ذهبي
+                    } else if (currentEmoji === '❤️') {
+                        element.style.color = '#ff4d6d'; // أحمر
+                    } else if (currentEmoji === '🌹') {
+                        element.style.color = '#ff2a2a'; // أحمر ورد
+                    }
 
-                    // حذف القلب بعد انتهاء الحركة
+                    document.body.appendChild(element);
+
+                    // حذف العنصر بعد انتهاء الحركة
                     setTimeout(() => {
-                        heart.remove();
+                        element.remove();
                     }, 4000);
-                }, i * 100); // تأخير بسيط بين كل قلب
+                }, i * 80); // تأخير بسيط بين كل عنصر
             }
         }
     </script>
